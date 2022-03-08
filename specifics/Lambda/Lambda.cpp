@@ -395,10 +395,10 @@ void Lambda::read_configFilesPath(Tango::Attribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::read_configFilesPath) ENABLED START -----*/
     try
     {
-        std::string temp = m_camera->getConfigFilePath();
+        /*std::string temp = m_camera->getConfigFilePath();
         strcpy(*attr_configFilesPath_read, temp.c_str());
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_configFilesPath_read);
+    	attr.set_value(attr_configFilesPath_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -423,9 +423,9 @@ void Lambda::read_readoutTime(Tango::Attribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::read_readoutTime) ENABLED START -----*/
     try
     {
-        *attr_readoutTime_read = m_camera->getReadoutTimeMs();
+        /**attr_readoutTime_read = m_camera->getReadoutTimeMs();
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_readoutTime_read);
+    	attr.set_value(attr_readoutTime_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -453,9 +453,9 @@ void Lambda::read_distortionCorrection(Tango::Attribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::read_distortionCorrection) ENABLED START -----*/
     try
     {
-        *attr_distortionCorrection_read = m_camera->getDistortionCorrection();
+        /**attr_distortionCorrection_read = m_camera->getDistortionCorrection();
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_distortionCorrection_read);
+    	attr.set_value(attr_distortionCorrection_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -480,9 +480,9 @@ void Lambda::read_energyThreshold1(Tango::Attribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::read_energyThreshold1) ENABLED START -----*/
     try
     {
-        *attr_energyThreshold1_read = m_camera->getThresholdEnergy(0);
+        /**attr_energyThreshold1_read = m_camera->getThresholdEnergy(0);
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_energyThreshold1_read);
+    	attr.set_value(attr_energyThreshold1_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -510,9 +510,9 @@ void Lambda::write_energyThreshold1(Tango::WAttribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::write_energyThreshold1) ENABLED START -----*/
     try
     {
-        float data = static_cast<float>(w_val);
+        /*float data = static_cast<float>(w_val);
         m_camera->setThresholdEnergy(0, data);
-        yat4tango::PropertyHelper::set_property(this, "MemorizedEnergyThreshold1", w_val);
+        yat4tango::PropertyHelper::set_property(this, "MemorizedEnergyThreshold1", w_val);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -539,11 +539,11 @@ void Lambda::read_operatingMode(Tango::Attribute &attr)
 	//	Set the attribute value
     try
     {
-        std::string temp = m_camera->getOperationMode();
+        /*std::string temp = m_camera->getOperationMode();
 
         strcpy(*attr_operatingMode_read, temp.c_str());
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_operatingMode_read);
+    	attr.set_value(attr_operatingMode_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -569,9 +569,9 @@ void Lambda::read_burstMode(Tango::Attribute &attr)
 	/*----- PROTECTED REGION ID(Lambda::read_burstMode) ENABLED START -----*/
     try
     {
-        *attr_burstMode_read = m_camera->getBurstMode();
+       /* *attr_burstMode_read = m_camera->getBurstMode();
         attr.set_quality(Tango::ATTR_VALID);
-    	attr.set_value(attr_burstMode_read);
+    	attr.set_value(attr_burstMode_read);*/
     }
     catch (Tango::DevFailed& df)
     {
@@ -752,11 +752,11 @@ void Lambda::force_precompressEnabled(bool value)
 
     try
     {
-        bool compression_enabled;
+        /*bool compression_enabled;
         int  comp_level;
 
         m_camera->getCompressionEnabled(compression_enabled, comp_level);
-        m_camera->setCompressionEnabled(value, comp_level); // keep the previous compression level
+        m_camera->setCompressionEnabled(value, comp_level); // keep the previous compression level*/
     }
     catch (Tango::DevFailed& df)
     {
